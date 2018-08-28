@@ -7,15 +7,25 @@ import "./Main.css";
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.handleSlideBtn = this.handleSlideBtn.bind(this);
+    this.state = {
+      navBarActive: false
+    };
+  }
+
+  handleSlideBtn() {
+    this.setState({ navBarActive: !this.state.navBarActive });
   }
 
   render() {
     return (
       <div className="container">
-        <NavBar />
-        <SideMenu />
-        <Content />
+        <NavBar handleSlideBtn={this.handleSlideBtn} />
+        <SideMenu
+          navBarActive={this.state.navBarActive}
+          handleSlideBtn={this.handleSlideBtn}
+        />
+        <Content navBarActive={this.state.navBarActive} />
       </div>
     );
   }

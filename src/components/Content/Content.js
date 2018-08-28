@@ -4,7 +4,7 @@ import "./Content.css";
 class Content extends React.Component {
   render() {
     return (
-      <section className="content">
+      <section className={`content ${this.props.navBarActive ? "margin" : ""}`}>
         Content Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         Voluptas corporis blanditiis doloremque adipisci itaque magni amet
         tenetur, suscipit possimus explicabo recusandae quod. Consequatur
