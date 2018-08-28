@@ -1,0 +1,7 @@
+.container {
+
+}
+
+.container > *:first-child {
+  height: 100%;
+}
